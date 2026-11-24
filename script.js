@@ -4,8 +4,7 @@ const feedback = document.querySelector('#feedback');
 const fields = {
   name: document.querySelector('#name'),
   email: document.querySelector('#email'),
-  password: document.querySelector('#password'),
-  confirmPassword: document.querySelector('#confirm-password')
+  password: document.querySelector('#password')
 };
 
 function showError(field, message) {
@@ -20,15 +19,25 @@ form.addEventListener('submit', (event) => {
   const name = fields.name.value.trim();
   const email = fields.email.value.trim();
   const password = fields.password.value;
-  const confirmation = fields.confirmPassword.value;
 
-  showError(fields.name, name.length < 3 ? 'Informe um nome com pelo menos 3 caracteres.' : '');
-  showError(fields.email, fields.email.validity.valid && email ? '' : 'Informe um e-mail válido.');
-  showError(fields.password, password.length >= 8 ? '' : 'A senha precisa ter pelo menos 8 caracteres.');
-  showError(fields.confirmPassword, confirmation === password && confirmation ? '' : 'As senhas precisam ser iguais.');
+  showError(
+    fields.name,
+    name.length < 3 ? 'Informe um nome com pelo menos 3 caracteres.' : ''
+  );
+
+  showError(
+    fields.email,
+    fields.email.validity.valid && email ? '' : 'Informe um e-mail válido.'
+  );
+
+  showError(
+    fields.password,
+    password.length >= 8 ? '' : 'A senha precisa ter pelo menos 8 caracteres.'
+  );
 
   if (!form.querySelector('[aria-invalid="true"]')) {
-    feedback.textContent = `Cadastro validado. Seja bem-vindo(a), ${name}!`;
+    const firstName = name.split(' ')[0];
+    feedback.textContent = `Cadastro validado. Seja bem-vindo(a), ${firstName}!`;
     form.reset();
   }
 });
