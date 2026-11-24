@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: 'DM Sans', sans-serif;
+  color: #18243a;
+  background: #f1f4fa;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at 15% 15%, #dce7ff 0, transparent 32%), #f1f4fa;
+}
+
+.card {
+  width: min(100%, 460px);
+  padding: 40px;
+  border: 1px solid #e6eaf2;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 70px #25385818;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #536ee5;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+h1 {
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  font-size: 2rem;
+  letter-spacing: -.04em;
+}
+
+.intro { margin: 8px 0 28px; color: #6c778b; }
+
+form { display: grid; }
+
+label { margin: 15px 0 7px; font-size: .88rem; font-weight: 600; }
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dce2ec;
+  border-radius: 9px;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input:focus { border-color: #536ee5; box-shadow: 0 0 0 3px #536ee51c; }
+input[aria-invalid="true"] { border-color: #d64b56; }
+.hint, .error { min-height: 17px; margin-top: 5px; font-size: .75rem; }
+.hint { color: #788399; }
+.error { color: #c33e4b; }
+
+button {
+  margin-top: 19px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 9px;
+  background: #536ee5;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+button:hover { background: #405bd0; transform: translateY(-1px); }
+button:focus-visible { outline: 3px solid #a9b7ff; outline-offset: 3px; }
+.feedback { min-height: 20px; margin: 14px 0 0; color: #247a55; font-size: .88rem; }
+
+@media (max-width: 480px) {
+  .card { padding: 30px 24px; }
+  h1 { font-size: 1.7rem; }
+}
