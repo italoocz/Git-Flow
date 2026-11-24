@@ -10,23 +10,53 @@
 </head>
 <body>
   <main class="card">
-    <p class="eyebrow">GIT FLOW - TESTES</p>
+    <p class="eyebrow">GIT FLOW · TESTES</p>
     <h1>Crie sua conta</h1>
     <p class="intro">Preencha seus dados para começar.</p>
+
     <form id="registration-form" novalidate>
       <label for="name">Nome completo</label>
-      <input id="name" name="name" type="text" autocomplete="name" minlength="3" required>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        autocomplete="name"
+        minlength="3"
+        required
+      >
       <small class="error" id="name-error"></small>
+
       <label for="email">E-mail</label>
-      <input id="email" name="email" type="email" autocomplete="email" required>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+      >
       <small class="error" id="email-error"></small>
+
+      <label for="phone">Telefone <span>(opcional)</span></label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        placeholder="(00) 00000-0000"
+      >
+
       <label for="password">Senha</label>
-      <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        autocomplete="new-password"
+        minlength="8"
+        required
+      >
       <small class="hint">Use pelo menos 8 caracteres.</small>
       <small class="error" id="password-error"></small>
-      <label for="confirm-password">Confirme a senha</label>
-      <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required>
-      <small class="error" id="confirm-password-error"></small>
+
       <button type="submit">Cadastrar</button>
       <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
     </form>
